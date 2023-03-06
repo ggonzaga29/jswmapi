@@ -1,5 +1,5 @@
 const axios = require("axios");
-require('dotenv').config()
+const config = require("../api.config");
 
 /**
  Retrieves items from the API based on the specified language
@@ -12,7 +12,7 @@ require('dotenv').config()
  */
 const getItems = async (language = "en") => {
     try {
-        const response = await axios.get(process.env.API_BASE_URL + '/items', {
+        const response = await axios.get(config.API_BASE_URL + '/items', {
             headers: {
                 language
             }

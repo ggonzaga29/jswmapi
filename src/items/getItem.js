@@ -1,5 +1,5 @@
 const axios = require("axios");
-require('dotenv').config()
+const config = require("../api.config");
 
 /**
  Gets info about an item based on the item name
@@ -11,7 +11,11 @@ require('dotenv').config()
  @throws {Error} - If the API request fails or returns an error
  */
 const getItem = async (item, platform = "pc") => {
-    const response = axios.get()
+    try {
+        const response = await axios.get(config.API_BASE_URL + "")
+    } catch(error) {
+        throw error;
+    }
 }
 
 module.exports = getItem;
