@@ -12,7 +12,7 @@ const config = require("../api.config");
  */
 const getQuirks = async (language = "en") => {
     try {
-        const response = await axios.get(config.API_BASE_URL + `/lich/weapons`, {
+        const response = await axios.get(config.API_BASE_URL + `/lich/quirks`, {
             headers: {
                 language
             }
