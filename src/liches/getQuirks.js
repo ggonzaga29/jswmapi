@@ -18,7 +18,7 @@ const getQuirks = async (language = "en") => {
             }
         })
 
-        return response.data.payload.item;
+        return response.data.payload.quirks;
     } catch(error) {
         throw error;
     }

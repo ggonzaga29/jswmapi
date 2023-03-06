@@ -18,7 +18,7 @@ const getEphemeras = async (language = "en") => {
             }
         })
 
-        return response.data.payload.item;
+        return response.data.payload.ephemeras;
     } catch(error) {
         throw error;
     }

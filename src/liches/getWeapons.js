@@ -18,7 +18,7 @@ const getWeapons = async (language = "en") => {
             }
         })
 
-        return response.data.payload.item;
+        return response.data.payload.weapons;
     } catch(error) {
         throw error;
     }
