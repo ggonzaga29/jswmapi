@@ -18,7 +18,7 @@ const getItem = async (item, platform = "pc") => {
             }
         })
 
-        return response.data.payload;
+        return response.data.payload.item;
     } catch(error) {
         throw error;
     }
