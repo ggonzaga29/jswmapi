@@ -1,6 +1,6 @@
 import axios from "axios";
-import config from "../api.config";
-import ResponsePayload from "../interfaces/ResponsePayload";
+import config from "./api.config";
+import ResponsePayload from "../../interfaces/ResponsePayload";
 
 interface RequestParams {
 
