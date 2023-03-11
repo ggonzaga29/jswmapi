@@ -16,7 +16,7 @@ const makeRequest = async (
         const response = await axios.get(
             `${config.API_BASE_URL}${endpoint}`,
             {
-                timeout: 10000,
+                timeout: 20000,
                 headers: {
                     platform,
                     language
