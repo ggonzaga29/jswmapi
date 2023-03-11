@@ -1,2 +1,0 @@
-const wm = require("./src");
-
