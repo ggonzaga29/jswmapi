@@ -1,5 +1,5 @@
 import { Quirk, Weapon, Ephemera } from "../../interfaces/sharedInterfaces";
-import makeRequest from "../makeRequest";
+import makeRequest from "./makeRequest";
 
 export const quirks = async (endpoint: string): Promise<Quirk[]> => {
     try {

@@ -19,15 +19,12 @@ import * as wm from "./src";
     //
     // console.log(weapons.length, ephemeras.length, quirks.length);
 
-    // const allItems = await wm.item.getAllItems();
-    // allItems.forEach(item => {
-    //     console.log(item.url_name);
-    // });
+    const allItems = await wm.item.getAll();
 
-    // const miragePrimeDropSources = await wm.item.getDropSources("mirage_prime_blueprint");
-    // miragePrimeDropSources.forEach(dropsource => {
-    //     console.log(dropsource.item);
-    // })
+    const miragePrimeDropSources = await wm.item.getDropSources("mirage_prime_blueprint");
+    miragePrimeDropSources.forEach(dropsource => {
+        console.log(dropsource);
+    })
 
     // const miragePrimeBP = await wm.item.get("mirage_prime_blueprint");
     // console.log(miragePrimeBP)
@@ -35,9 +32,7 @@ import * as wm from "./src";
     //     console.log(item.en);
     // })
 
-    const orders = await wm.item.getOrders("mirage_prime_blueprint")
-
-    orders
+    // const orders = await wm.item.getOrders("mirage_prime_blueprint")
 
     // console.log(allItems)
     // const rivenItems = await wm.riven.getItems();

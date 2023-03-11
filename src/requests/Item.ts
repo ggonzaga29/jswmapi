@@ -1,9 +1,11 @@
-import makeRequest from "./makeRequest";
+import makeRequest from "./helpers/makeRequest";
 import {AllItems, Dropsource, Item, Order} from "../interfaces/item";
+import {RivenItems} from "../interfaces/Riven";
 
 const BASE_ENDPOINT = "/items";
 
-export const getAll = async (): Promise<AllItems[]> => {
+// TODO: fix this shit
+const getAll = async (): Promise<AllItems[] | RivenItems[]> => {
     try {
         const {items} = await makeRequest(BASE_ENDPOINT);
         return items;
@@ -12,7 +14,7 @@ export const getAll = async (): Promise<AllItems[]> => {
     }
 }
 
-export const get = async (itemName: string): Promise<Item> => {
+const get = async (itemName: string): Promise<Item> => {
     try {
         const {item} = await makeRequest(`${BASE_ENDPOINT}/${itemName}`);
         return item;
@@ -21,7 +23,7 @@ export const get = async (itemName: string): Promise<Item> => {
     }
 }
 
-export const getOrders = async (itemName: string): Promise<Order> => {
+const getOrders = async (itemName: string): Promise<Order[]> => {
     try {
         const {orders} = await makeRequest(`${BASE_ENDPOINT}/${itemName}/orders`);
         return orders;
@@ -30,12 +32,19 @@ export const getOrders = async (itemName: string): Promise<Order> => {
     }
 }
 
-export const getDropSources = async (itemName: string): Promise<Dropsource[]> => {
+const getDropSources = async (itemName: string): Promise<Dropsource[]> => {
     try {
         const {dropsources} = await makeRequest(`${BASE_ENDPOINT}/${itemName}/dropsources`)
         return dropsources;
     } catch (e) {
         throw e;
     }
+}
+
+export const item = {
+    getAll,
+    get,
+    getOrders,
+    getDropSources
 }
 
